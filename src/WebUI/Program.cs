@@ -1,23 +1,13 @@
-using GameLibrary.Application.Common;
+using GameLibrary.Application;
 using GameLibrary.Application.Services;
-using GameLibrary.Infrastructure.Persistence;
-using Microsoft.EntityFrameworkCore;
+using GameLibrary.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-var connectionPassword = builder.Configuration["GameLibrary:ConnectionString"];
-var connection = builder.Configuration.GetConnectionString("Default");
-builder.Services.AddDbContext<IAppDbContext, AppDbContext>(
-        options => options.UseMySql(
-                connection + connectionPassword,
-                new MySqlServerVersion(new Version(11,0,2))
-                )
-        );
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-builder.Services.AddTransient<GameService>();
+builder.Services.ConfigureInfrastructureServices(builder.Configuration);
+builder.Services.ConfigureApplicationServices();
 
 var app = builder.Build();
 

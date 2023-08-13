@@ -28,6 +28,9 @@
     <Reference Include="Microsoft.EntityFrameworkCore.Relational">
       <HintPath>..\..\..\..\..\.nuget\packages\microsoft.entityframeworkcore.relational\7.0.9\lib\net6.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+      <HintPath>..\..\..\..\..\..\..\usr\share\dotnet\shared\Microsoft.AspNetCore.App\7.0.9\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Pomelo.EntityFrameworkCore.MySql">
       <HintPath>..\..\..\..\..\.nuget\packages\pomelo.entityframeworkcore.mysql\7.0.0\lib\net7.0\Pomelo.EntityFrameworkCore.MySql.dll</HintPath>
     </Reference>
