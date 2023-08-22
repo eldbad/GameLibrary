@@ -15,7 +15,7 @@ public class UnitOfWork : IUnitOfWork
 
     public UnitOfWork(IAppDbContext dbContext)
     {
-        this._dbContext = dbContext;
+        _dbContext = dbContext;
     }
     
     public void Save()

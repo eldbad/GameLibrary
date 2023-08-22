@@ -1,5 +1,4 @@
 using GameLibrary.Application;
-using GameLibrary.Application.Services;
 using GameLibrary.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
