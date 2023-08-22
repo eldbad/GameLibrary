@@ -5,5 +5,5 @@ namespace GameLibrary.Application.Repositories;
 
 public interface IGameRepository : IRepository<Game>
 {
-    
+    IQueryable<Game> FilterByGenre(Genre genre);
 }

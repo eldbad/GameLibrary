@@ -9,4 +9,9 @@ public class GameRepository : RepositoryBase<Game>, IGameRepository
     public GameRepository(IAppDbContext dbContext) : base(dbContext)
     {
     }
+
+    public IQueryable<Game> FilterByGenre(Genre genre)
+    {
+        return DbContext.Games.Where(x => x.Genre != null && x.Genre.Id == genre.Id);
+    }
 }
